@@ -87,7 +87,7 @@ class SearchBar extends React.Component {
                         <input type="text"
                         // if we set a value on value then it will always show the same 
                             value={this.state.term}
-                            onChange={(event) =>this.setState({term:event.target.value.toUpperCase()})}>
+                            onChange={(event) =>this.setState({term:event.target.value})}>
 
                         </input>
                     </div>
