@@ -1,6 +1,6 @@
 import React from 'react';
 
-import axios from 'axios';
+import unsplash from '../api/unsplash';
 import SearchBar from './SearchBar';
 
 
@@ -27,11 +27,9 @@ class App extends React.Component{
      onSearchSubmit=async (term)=>{
         // setting up axios for api requests
         //these are asynchronous request(take some time to go to unpleash and come back) when its doing ie getting request in meanwhile the onSubmit is executed
-       const response=await  axios.get('https://api.unsplash.com/search/photos',{
+       const response=await  unsplash.get('/search/photos',{
             params:{query:term},
-            headers:{
-                Authorization: 'Client-ID U3MkMtC24XNHUe1zal9clTuYOyMnY_8Q6g3EFzuwpF4'
-            }
+           
         })
          this.setState({images:response.data.results})
         
